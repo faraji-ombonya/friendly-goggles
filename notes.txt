@@ -3,7 +3,7 @@ BMI                 16.6        Float
 Smoking             Yes         Boolean
 AlcoholDrinking     No          Boolean
 Stroke              No          Boolean
-PhysicalHealth      3           float
+PhysicalHealth      3           float range(0 -> 30)
 MentalHealth        30          float
 DiffWalking         No          Boolean
 Sex                 Female      Boolean
