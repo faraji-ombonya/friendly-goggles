@@ -1,0 +1,18 @@
+HeartDisease        No          Boolean
+BMI                 16.6        Float
+Smoking             Yes         Boolean
+AlcoholDrinking     No          Boolean
+Stroke              No          Boolean
+PhysicalHealth      3           float range(0 -> 30)
+MentalHealth        30          float
+DiffWalking         No          Boolean
+Sex                 Female      Boolean
+AgeCategory         55-59       Category
+Race                White       Category
+Diabetic            Yes         Boolean
+PhysicalActivity    Yes         Boolean
+GenHealth           Very good   Category
+SleepTime           5           range(0, 24)
+Asthma              Yes         Boolean
+KidneyDisease       No          Boolean
+SkinCancer          Yes         Boolean
