@@ -1,8 +1,23 @@
+import React, { useState, } from "react";
 import { PhotoIcon, UserCircleIcon } from "@heroicons/react/24/solid";
 
 export default function DiagnosisForm() {
+  const [formData, setFormData] = useState({});
+
+  const handleInputChange = (event) => {
+    const { name, value } = event.target;
+    setFormData({ ...formData, [name]: value });
+  };
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+
+    console.log(formData);
+    // Perform form submission logic here
+  };
+
   return (
-    <form className="py-10 ">
+    <form className="py-10 " onSubmit={(e) => handleSubmit(e)}>
       <div className="space-y-12">
         <div className="border-b border-gray-900/10 pb-12">
           <h2 className="text-base font-semibold leading-7 text-gray-900">
@@ -22,8 +37,9 @@ export default function DiagnosisForm() {
               <div className="mt-2">
                 <select
                   id="smoking"
-                  name="isSmoking"
-                  autoComplete="country-name"
+                  name="smoking"
+                  onChange={(e) => handleInputChange(e)}
+                  autoComplete="smoking"
                   className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6"
                 >
                   <option>--SELECT--</option>
@@ -35,16 +51,17 @@ export default function DiagnosisForm() {
 
             <div className="sm:col-span-3">
               <label
-                htmlFor="country"
+                htmlFor="alcohol_drinking"
                 className="block text-sm font-medium leading-6 text-gray-900"
               >
                 Do you drink alcohol?
               </label>
               <div className="mt-2">
                 <select
-                  id="country"
-                  name="country"
-                  autoComplete="country-name"
+                  id="alcohol_drinking"
+                  name="alcohol_drinking"
+                  onChange={(e) => handleInputChange(e)}
+                  autoComplete="alcohol_drinking"
                   className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6"
                 >
                   <option>--SELECT--</option>
@@ -56,16 +73,17 @@ export default function DiagnosisForm() {
 
             <div className="sm:col-span-3">
               <label
-                htmlFor="country"
+                htmlFor="stroke"
                 className="block text-sm font-medium leading-6 text-gray-900"
               >
                 Do you have stroke?
               </label>
               <div className="mt-2">
                 <select
-                  id="country"
-                  name="country"
-                  autoComplete="country-name"
+                  id="stroke"
+                  name="stroke"
+                  onChange={(e) => handleInputChange(e)}
+                  autoComplete="stroke"
                   className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6"
                 >
                   <option>--SELECT--</option>
@@ -77,16 +95,17 @@ export default function DiagnosisForm() {
 
             <div className="sm:col-span-3">
               <label
-                htmlFor="country"
+                htmlFor="diff_walking"
                 className="block text-sm font-medium leading-6 text-gray-900"
               >
                 Diff walking
               </label>
               <div className="mt-2">
                 <select
-                  id="country"
-                  name="country"
-                  autoComplete="country-name"
+                  id="diff_walking"
+                  name="diff_walking"
+                  onChange={(e) => handleInputChange(e)}
+                  autoComplete="diff_walking"
                   className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6"
                 >
                   <option>--SELECT--</option>
@@ -98,16 +117,17 @@ export default function DiagnosisForm() {
 
             <div className="sm:col-span-3">
               <label
-                htmlFor="country"
+                htmlFor="sex"
                 className="block text-sm font-medium leading-6 text-gray-900"
               >
                 What gender are you?
               </label>
               <div className="mt-2">
                 <select
-                  id="country"
-                  name="country"
-                  autoComplete="country-name"
+                  id="sex"
+                  name="sex"
+                  onChange={(e) => handleInputChange(e)}
+                  autoComplete="sex"
                   className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6"
                 >
                   <option>--SELECT--</option>
@@ -119,16 +139,17 @@ export default function DiagnosisForm() {
 
             <div className="sm:col-span-3">
               <label
-                htmlFor="country"
+                htmlFor="age_category"
                 className="block text-sm font-medium leading-6 text-gray-900"
               >
                 What age category are you?
               </label>
               <div className="mt-2">
                 <select
-                  id="country"
-                  name="country"
-                  autoComplete="country-name"
+                  id="age_category"
+                  name="age_category"
+                  onChange={(e) => handleInputChange(e)}
+                  autoComplete="age_category"
                   className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6"
                 >
                   <option>--SELECT--</option>
@@ -144,16 +165,17 @@ export default function DiagnosisForm() {
 
             <div className="sm:col-span-3">
               <label
-                htmlFor="country"
+                htmlFor="race"
                 className="block text-sm font-medium leading-6 text-gray-900"
               >
                 What race are you?
               </label>
               <div className="mt-2">
                 <select
-                  id="country"
-                  name="country"
-                  autoComplete="country-name"
+                  id="race"
+                  name="race"
+                  autoComplete="race"
+                  onChange={(e) => handleInputChange(e)}
                   className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6"
                 >
                   <option>--SELECT--</option>
@@ -167,16 +189,17 @@ export default function DiagnosisForm() {
 
             <div className="sm:col-span-3">
               <label
-                htmlFor="country"
+                htmlFor="diabetic"
                 className="block text-sm font-medium leading-6 text-gray-900"
               >
                 Are you diabetic?
               </label>
               <div className="mt-2">
                 <select
-                  id="country"
-                  name="country"
-                  autoComplete="country-name"
+                  id="diabetic"
+                  name="diabetic"
+                  onChange={(e) => handleInputChange(e)}
+                  autoComplete="diabetic"
                   className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6"
                 >
                   <option>--SELECT--</option>
@@ -188,16 +211,17 @@ export default function DiagnosisForm() {
 
             <div className="sm:col-span-3">
               <label
-                htmlFor="country"
+                htmlFor="physical_activity"
                 className="block text-sm font-medium leading-6 text-gray-900"
               >
                 Do you do regular exercise?
               </label>
               <div className="mt-2">
                 <select
-                  id="country"
-                  name="country"
-                  autoComplete="country-name"
+                  id="physical_activity"
+                  name="physical_activity"
+                  onChange={(e) => handleInputChange(e)}
+                  autoComplete="physical_activity"
                   className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6"
                 >
                   <option>--SELECT--</option>
@@ -209,16 +233,17 @@ export default function DiagnosisForm() {
 
             <div className="sm:col-span-3">
               <label
-                htmlFor="country"
+                htmlFor="gen_health"
                 className="block text-sm font-medium leading-6 text-gray-900"
               >
                 Describe your general health condition.
               </label>
               <div className="mt-2">
                 <select
-                  id="country"
-                  name="country"
-                  autoComplete="country-name"
+                  id="gen_health"
+                  name="gen_health"
+                  onChange={(e) => handleInputChange(e)}
+                  autoComplete="gen_health"
                   className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6"
                 >
                   <option>--SELECT--</option>
@@ -232,7 +257,7 @@ export default function DiagnosisForm() {
 
             <div className="sm:col-span-3">
               <label
-                htmlFor="country"
+                htmlFor="sleep_time"
                 className="block text-sm font-medium leading-6 text-gray-900"
               >
                 How many hours of sleep do you get?
@@ -240,8 +265,9 @@ export default function DiagnosisForm() {
               <div className="mt-2">
                 <select
                   id="country"
-                  name="country"
-                  autoComplete="country-name"
+                  name="sleep_time"
+                  onChange={(e) => handleInputChange(e)}
+                  autoComplete="sleep_time"
                   className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6"
                 >
                   <option>--SELECT--</option>
@@ -275,16 +301,17 @@ export default function DiagnosisForm() {
 
             <div className="sm:col-span-3">
               <label
-                htmlFor="country"
+                htmlFor="asthmatic"
                 className="block text-sm font-medium leading-6 text-gray-900"
               >
                 Are you asthmatic?
               </label>
               <div className="mt-2">
                 <select
-                  id="country"
-                  name="country"
-                  autoComplete="country-name"
+                  id="asthmatic"
+                  name="asthmatic"
+                  onChange={(e) => handleInputChange(e)}
+                  autoComplete="asthmatic"
                   className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6"
                 >
                   <option>--SELECT--</option>
@@ -296,16 +323,17 @@ export default function DiagnosisForm() {
 
             <div className="sm:col-span-3">
               <label
-                htmlFor="country"
+                htmlFor="kidney_disease"
                 className="block text-sm font-medium leading-6 text-gray-900"
               >
                 Do you have kidney disease?
               </label>
               <div className="mt-2">
                 <select
-                  id="country"
-                  name="country"
-                  autoComplete="country-name"
+                  id="kidney_disease"
+                  name="kidney_disease"
+                  onChange={(e) => handleInputChange(e)}
+                  autoComplete="kidney_disease"
                   className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6"
                 >
                   <option>--SELECT--</option>
@@ -317,16 +345,17 @@ export default function DiagnosisForm() {
 
             <div className="sm:col-span-3">
               <label
-                htmlFor="country"
+                htmlFor="skin_cancer"
                 className="block text-sm font-medium leading-6 text-gray-900"
               >
                 Do you have skin cancer?
               </label>
               <div className="mt-2">
                 <select
-                  id="country"
-                  name="country"
-                  autoComplete="country-name"
+                  id="skin_cancer"
+                  name="skin_cancer"
+                  onChange={(e) => handleInputChange(e)}
+                  autoComplete="skin_cancer"
                   className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6"
                 >
                   <option>--SELECT--</option>
@@ -338,7 +367,7 @@ export default function DiagnosisForm() {
 
             <div className="sm:col-span-3">
               <label
-                htmlFor="city"
+                htmlFor="bmi"
                 className="block text-sm font-medium leading-6 text-gray-900"
               >
                 What is you BMI?
@@ -346,9 +375,10 @@ export default function DiagnosisForm() {
               <div className="mt-2">
                 <input
                   type="number"
-                  name="city"
-                  id="city"
-                  autoComplete="address-level2"
+                  name="bmi"
+                  onChange={(e) => handleInputChange(e)}
+                  id="bmi"
+                  autoComplete="bmi"
                   className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                 />
               </div>
@@ -356,7 +386,7 @@ export default function DiagnosisForm() {
 
             <div className="sm:col-span-3">
               <label
-                htmlFor="region"
+                htmlFor="phyisical_health"
                 className="block text-sm font-medium leading-6 text-gray-900"
               >
                 Rate your physical health on a scale of 1 to 30?
@@ -364,9 +394,10 @@ export default function DiagnosisForm() {
               <div className="mt-2">
                 <input
                   type="number"
-                  name="region"
-                  id="region"
-                  autoComplete="address-level1"
+                  name="phyisical_health"
+                  onChange={(e) => handleInputChange(e)}
+                  id="phyisical_health"
+                  autoComplete="phyisical_health"
                   className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                 />
               </div>
@@ -374,7 +405,7 @@ export default function DiagnosisForm() {
 
             <div className="sm:col-span-3">
               <label
-                htmlFor="postal-code"
+                htmlFor="mental_health"
                 className="block text-sm font-medium leading-6 text-gray-900"
               >
                 Rate your mental health on a scale of 1 to 30?
@@ -382,9 +413,10 @@ export default function DiagnosisForm() {
               <div className="mt-2">
                 <input
                   type="number"
-                  name="postal-code"
-                  id="postal-code"
-                  autoComplete="postal-code"
+                  name="mental_health"
+                  onChange={(e) => handleInputChange(e)}
+                  id="mental_health"
+                  autoComplete="mental_health"
                   className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                 />
               </div>
