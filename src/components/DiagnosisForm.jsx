@@ -1,5 +1,6 @@
-import React, { useState, } from "react";
+import React, { useState } from "react";
 import { PhotoIcon, UserCircleIcon } from "@heroicons/react/24/solid";
+import Answer from "../utils/Answer";
 
 export default function DiagnosisForm() {
   const [formData, setFormData] = useState({});
@@ -11,9 +12,10 @@ export default function DiagnosisForm() {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-
-    console.log(formData);
-    // Perform form submission logic here
+    const answer = new Answer();
+    const data = await answer.post(formData);
+    console.log("request payload", formData);
+    console.log("response payload", data);
   };
 
   return (
@@ -301,17 +303,17 @@ export default function DiagnosisForm() {
 
             <div className="sm:col-span-3">
               <label
-                htmlFor="asthmatic"
+                htmlFor="asthma"
                 className="block text-sm font-medium leading-6 text-gray-900"
               >
-                Are you asthmatic?
+                Are you asthma?
               </label>
               <div className="mt-2">
                 <select
-                  id="asthmatic"
-                  name="asthmatic"
+                  id="asthma"
+                  name="asthma"
                   onChange={(e) => handleInputChange(e)}
-                  autoComplete="asthmatic"
+                  autoComplete="asthma"
                   className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6"
                 >
                   <option>--SELECT--</option>
@@ -417,6 +419,26 @@ export default function DiagnosisForm() {
                   onChange={(e) => handleInputChange(e)}
                   id="mental_health"
                   autoComplete="mental_health"
+                  className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                />
+              </div>
+            </div>
+
+
+            <div className="sm:col-span-3">
+              <label
+                htmlFor="physical_health"
+                className="block text-sm font-medium leading-6 text-gray-900"
+              >
+                Rate your physical health on a scale of 1 to 30?
+              </label>
+              <div className="mt-2">
+                <input
+                  type="number"
+                  name="physical_health"
+                  onChange={(e) => handleInputChange(e)}
+                  id="physical_health"
+                  autoComplete="physical_health"
                   className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                 />
               </div>
