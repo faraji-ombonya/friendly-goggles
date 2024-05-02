@@ -155,12 +155,19 @@ export default function DiagnosisForm() {
                   className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6"
                 >
                   <option>--SELECT--</option>
-                  <option>20 - 24</option>
-                  <option>25 - 29</option>
-                  <option>30 - 34</option>
-                  <option>35 - 39</option>
-                  <option>40 - 44</option>
-                  <option>45 - 49</option>
+                  <option>18-24</option>
+                  <option>25-29</option>
+                  <option>30-34</option>
+                  <option>35-39</option>
+                  <option>40-44</option>
+                  <option>45-49</option>
+                  <option>50-54</option>
+                  <option>55-59</option>
+                  <option>60-64</option>
+                  <option>65-69</option>
+                  <option>70-74</option>
+                  <option>75-79</option>
+                  <option>80 or older</option>
                 </select>
               </div>
             </div>
@@ -185,6 +192,9 @@ export default function DiagnosisForm() {
                   <option>Black</option>
                   <option>White</option>
                   <option>Asian</option>
+                  <option>Other</option>
+                  <option>American Indian/Alaskan Native</option>
+                  <option>Other</option>
                 </select>
               </div>
             </div>
@@ -207,6 +217,8 @@ export default function DiagnosisForm() {
                   <option>--SELECT--</option>
                   <option>Yes</option>
                   <option>No</option>
+                  <option>Yes (during pregnancy)</option>
+                  <option>No, borderline diabetes</option>
                 </select>
               </div>
             </div>
@@ -249,10 +261,11 @@ export default function DiagnosisForm() {
                   className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6"
                 >
                   <option>--SELECT--</option>
+                  <option>Excellent</option>
                   <option>Very good</option>
                   <option>Good</option>
-                  <option>Bad</option>
-                  <option>Very bad</option>
+                  <option>Fair</option>
+                  <option>Poor</option>
                 </select>
               </div>
             </div>
@@ -306,7 +319,7 @@ export default function DiagnosisForm() {
                 htmlFor="asthma"
                 className="block text-sm font-medium leading-6 text-gray-900"
               >
-                Are you asthma?
+                Are you asthmatic?
               </label>
               <div className="mt-2">
                 <select
@@ -423,7 +436,6 @@ export default function DiagnosisForm() {
                 />
               </div>
             </div>
-
 
             <div className="sm:col-span-3">
               <label
