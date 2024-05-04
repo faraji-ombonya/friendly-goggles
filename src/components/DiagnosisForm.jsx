@@ -406,7 +406,7 @@ export default function DiagnosisForm({ setResult, setOpen }) {
                 htmlFor="phyisical_health"
                 className="block text-sm font-medium leading-6 text-gray-900"
               >
-                Rate your physical health on a scale of 1 to 30?
+                How many of the past 30 days did you experience poor physical health?
               </label>
               <div className="mt-2">
                 <input
@@ -425,7 +425,7 @@ export default function DiagnosisForm({ setResult, setOpen }) {
                 htmlFor="mental_health"
                 className="block text-sm font-medium leading-6 text-gray-900"
               >
-                Rate your mental health on a scale of 1 to 30?
+                How many of the past 30 days did you experience poor mental health?
               </label>
               <div className="mt-2">
                 <input
@@ -434,25 +434,6 @@ export default function DiagnosisForm({ setResult, setOpen }) {
                   onChange={(e) => handleInputChange(e)}
                   id="mental_health"
                   autoComplete="mental_health"
-                  className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-                />
-              </div>
-            </div>
-
-            <div className="sm:col-span-3">
-              <label
-                htmlFor="physical_health"
-                className="block text-sm font-medium leading-6 text-gray-900"
-              >
-                Rate your physical health on a scale of 1 to 30?
-              </label>
-              <div className="mt-2">
-                <input
-                  type="number"
-                  name="physical_health"
-                  onChange={(e) => handleInputChange(e)}
-                  id="physical_health"
-                  autoComplete="physical_health"
                   className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                 />
               </div>

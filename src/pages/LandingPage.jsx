@@ -7,7 +7,7 @@ function LandingPage() {
   const [open, setOpen] = useState(false);
   const [result, setResult] = useState({});
 
-  console.log("open", open)
+  console.log("open", open);
 
   return (
     <>
