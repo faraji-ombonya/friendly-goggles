@@ -61,7 +61,7 @@ export default function SimpleDialog({ setOpen, open, result }) {
                         as="h3"
                         className="text-base font-semibold leading-6 text-gray-900"
                       >
-                        Assessment results
+                        Assessment results {result?.heart_disease ? " (Positive)" : " (Negative)"}
                       </Dialog.Title>
                       <div className="mt-2">
                         <p className="text-sm text-gray-500">
