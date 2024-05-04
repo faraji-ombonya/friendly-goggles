@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { PhotoIcon, UserCircleIcon } from "@heroicons/react/24/solid";
 import Answer from "../utils/Answer";
 
-export default function DiagnosisForm() {
+export default function DiagnosisForm({ setResult, setOpen }) {
   const [formData, setFormData] = useState({});
 
   const handleInputChange = (event) => {
@@ -16,6 +16,8 @@ export default function DiagnosisForm() {
     const data = await answer.post(formData);
     console.log("request payload", formData);
     console.log("response payload", data);
+    setResult(data);
+    setOpen(true);
   };
 
   return (
