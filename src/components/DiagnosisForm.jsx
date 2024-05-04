@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { PhotoIcon, UserCircleIcon } from "@heroicons/react/24/solid";
 import Answer from "../utils/Answer";
 
-export default function DiagnosisForm() {
+export default function DiagnosisForm({ setResult, setOpen }) {
   const [formData, setFormData] = useState({});
 
   const handleInputChange = (event) => {
@@ -16,6 +16,8 @@ export default function DiagnosisForm() {
     const data = await answer.post(formData);
     console.log("request payload", formData);
     console.log("response payload", data);
+    setResult(data);
+    setOpen(true);
   };
 
   return (
@@ -155,12 +157,19 @@ export default function DiagnosisForm() {
                   className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6"
                 >
                   <option>--SELECT--</option>
-                  <option>20 - 24</option>
-                  <option>25 - 29</option>
-                  <option>30 - 34</option>
-                  <option>35 - 39</option>
-                  <option>40 - 44</option>
-                  <option>45 - 49</option>
+                  <option>18-24</option>
+                  <option>25-29</option>
+                  <option>30-34</option>
+                  <option>35-39</option>
+                  <option>40-44</option>
+                  <option>45-49</option>
+                  <option>50-54</option>
+                  <option>55-59</option>
+                  <option>60-64</option>
+                  <option>65-69</option>
+                  <option>70-74</option>
+                  <option>75-79</option>
+                  <option>80 or older</option>
                 </select>
               </div>
             </div>
@@ -185,6 +194,9 @@ export default function DiagnosisForm() {
                   <option>Black</option>
                   <option>White</option>
                   <option>Asian</option>
+                  <option>Other</option>
+                  <option>American Indian/Alaskan Native</option>
+                  <option>Other</option>
                 </select>
               </div>
             </div>
@@ -207,6 +219,8 @@ export default function DiagnosisForm() {
                   <option>--SELECT--</option>
                   <option>Yes</option>
                   <option>No</option>
+                  <option>Yes (during pregnancy)</option>
+                  <option>No, borderline diabetes</option>
                 </select>
               </div>
             </div>
@@ -249,10 +263,11 @@ export default function DiagnosisForm() {
                   className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6"
                 >
                   <option>--SELECT--</option>
+                  <option>Excellent</option>
                   <option>Very good</option>
                   <option>Good</option>
-                  <option>Bad</option>
-                  <option>Very bad</option>
+                  <option>Fair</option>
+                  <option>Poor</option>
                 </select>
               </div>
             </div>
@@ -306,7 +321,7 @@ export default function DiagnosisForm() {
                 htmlFor="asthma"
                 className="block text-sm font-medium leading-6 text-gray-900"
               >
-                Are you asthma?
+                Are you asthmatic?
               </label>
               <div className="mt-2">
                 <select
@@ -391,7 +406,7 @@ export default function DiagnosisForm() {
                 htmlFor="phyisical_health"
                 className="block text-sm font-medium leading-6 text-gray-900"
               >
-                Rate your physical health on a scale of 1 to 30?
+                How many of the past 30 days did you experience poor physical health?
               </label>
               <div className="mt-2">
                 <input
@@ -410,7 +425,7 @@ export default function DiagnosisForm() {
                 htmlFor="mental_health"
                 className="block text-sm font-medium leading-6 text-gray-900"
               >
-                Rate your mental health on a scale of 1 to 30?
+                How many of the past 30 days did you experience poor mental health?
               </label>
               <div className="mt-2">
                 <input
@@ -419,26 +434,6 @@ export default function DiagnosisForm() {
                   onChange={(e) => handleInputChange(e)}
                   id="mental_health"
                   autoComplete="mental_health"
-                  className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-                />
-              </div>
-            </div>
-
-
-            <div className="sm:col-span-3">
-              <label
-                htmlFor="physical_health"
-                className="block text-sm font-medium leading-6 text-gray-900"
-              >
-                Rate your physical health on a scale of 1 to 30?
-              </label>
-              <div className="mt-2">
-                <input
-                  type="number"
-                  name="physical_health"
-                  onChange={(e) => handleInputChange(e)}
-                  id="physical_health"
-                  autoComplete="physical_health"
                   className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                 />
               </div>
